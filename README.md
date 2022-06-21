@@ -2,6 +2,11 @@
 
 中间件模式的微信/QQ 小程序统一网络请求库
 
+- 类似 Axios 的调用方式，易于接入和使用
+- 完全沿用小程序原生的参数和返回格式
+- 类似 Koa 的中间件模式，方便对请求和响应内容做统一处理
+- 适用于小程序原生 JavaScript/TypeScript 项目、Taro 项目、Remax 项目等
+
 ## 开始使用
 
 ### 使用 requestRaw 发起不带中间件的普通请求
@@ -53,8 +58,13 @@ const baseUrlMiddleware = async (ctx, next) => {
   await next();
 };
 
+const cookieMiddleware = ...;
+const logMiddleware = ...;
+
 export const request = new RequestBus();
 request.use(baseUrlMiddleware);
+request.use(cookieMiddleware);
+request.use(logMiddleware);
 
 request.get('/').then((res) => console.log(res.data));
 ```
