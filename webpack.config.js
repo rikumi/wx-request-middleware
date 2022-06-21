@@ -27,7 +27,10 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: [
-                ['@babel/preset-env'],
+                ['@babel/preset-env', {
+                  // ref https://github.com/remaxjs/remax/blob/master/packages/babel-preset-remax/src/index.ts
+                  targets: ['chrome >= 49', 'firefox >= 64', 'ios >= 8', 'Android > 4.4'],
+                }],
               ],
               plugins: ['@babel/plugin-transform-runtime'],
             },

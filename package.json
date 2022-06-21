@@ -1,6 +1,6 @@
 {
   "name": "wx-request-middleware",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "中间件模式的微信/QQ 小程序统一网络请求库",
   "main": "dist/index.js",
   "type": "dist/index.d.ts",
