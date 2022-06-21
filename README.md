@@ -57,7 +57,7 @@ requestRaw.postFile('https://qq.com/my-file', {
 import * as url from 'url';
 import RequestBus, { RequestMiddleware } from 'wx-request-middleware';
 
-const baseUrlMiddleware = async (ctx, next) => {
+const baseUrlMiddleware: RequestMiddleware = async (ctx, next) => {
   ctx.request.url = url.resolve('https://qq.com/', ctx.request.url);
   await next();
 };
