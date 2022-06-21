@@ -9,6 +9,10 @@
 
 ## 开始使用
 
+```
+pnpm i wx-request-middleware
+```
+
 ### 使用 requestRaw 发起不带中间件的普通请求
 
 ```ts
